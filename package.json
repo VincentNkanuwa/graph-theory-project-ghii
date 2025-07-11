@@ -1,0 +1,11 @@
+{
+  "name": "graph-theory-project-ghii",
+  "version": "1.0.0",
+  "description": "Graph Theory Project For GHII assessment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vincent P. Nkanuwa",
+  "license": "ISC"
+}
