@@ -175,7 +175,7 @@ const htmlContent = `
 </html>
 `;
 
-fs.writeFileSync("malawi_district_graph.html", htmlContent);
+fs.writeFileSync("malawi_districts_graph.html", htmlContent);
 console.log("HTML visualization saved to malawi_district_graph.html");
 
 
