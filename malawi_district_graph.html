@@ -38,12 +38,12 @@
         .attr("fill", "steelblue");
 
         svg.selectAll("text")
-        .attr("transform", "rotate(45)")
         .data(nodes)
         .enter()
         .append("text")
-        .attr("x", d => d.x * width + 6)
-        .attr("y", d => d.y * height + 4)
+        .attr("x", d => d.x * width + 10)
+        .attr("y", (d, i) => d.y * height + 0.1 + i * 1.3)
+        .style("text-anchor", d => d.x < 0.5 ? "start" : "end")
         .text(d => d.id)
         .attr("font-size", "10px");
         </script>
