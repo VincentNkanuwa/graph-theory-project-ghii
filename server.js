@@ -132,46 +132,47 @@ const htmlContent = `
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-<div style="padding: 50px;text-align: center;">
-    <svg width="800" height="800"></svg>
-    <script>
-    const width = 600, height = 600;
-    const nodes = ${JSON.stringify(data.nodes)};
-    const links = ${JSON.stringify(data.edges.map(([a, b]) => ({ source: a, target: b })))};
+    <div style="padding: 50px;text-align: center;">
+        <svg width="800" height="800"></svg>
+        <script>
+        const width = 600, height = 600;
+        const nodes = ${JSON.stringify(data.nodes)};
+        const links = ${JSON.stringify(data.edges.map(([a, b]) => ({ source: a, target: b })))};
 
-    const svg = d3.select("svg");
-    const nodeById = {};
-    nodes.forEach(d => nodeById[d.id] = d);
+        const svg = d3.select("svg");
+        const nodeById = {};
+        nodes.forEach(d => nodeById[d.id] = d);
 
-    svg.selectAll("line")
-    .data(links)
-    .enter()
-    .append("line")
-    .attr("x1", d => nodeById[d.source].x * width)
-    .attr("y1", d => nodeById[d.source].y * height)
-    .attr("x2", d => nodeById[d.target].x * width)
-    .attr("y2", d => nodeById[d.target].y * height)
-    .attr("stroke", "#999")
-    .attr("stroke-width", 1);
+        svg.selectAll("line")
+        .data(links)
+        .enter()
+        .append("line")
+        .attr("x1", d => nodeById[d.source].x * width)
+        .attr("y1", d => nodeById[d.source].y * height)
+        .attr("x2", d => nodeById[d.target].x * width)
+        .attr("y2", d => nodeById[d.target].y * height)
+        .attr("stroke", "#999")
+        .attr("stroke-width", 1);
 
-    svg.selectAll("circle")
-    .data(nodes)
-    .enter()
-    .append("circle")
-    .attr("cx", d => d.x * width)
-    .attr("cy", d => d.y * height)
-    .attr("r", 5)
-    .attr("fill", "steelblue");
+        svg.selectAll("circle")
+        .data(nodes)
+        .enter()
+        .append("circle")
+        .attr("cx", d => d.x * width)
+        .attr("cy", d => d.y * height)
+        .attr("r", 5)
+        .attr("fill", "steelblue");
 
-    svg.selectAll("text")
-    .data(nodes)
-    .enter()
-    .append("text")
-    .attr("x", d => d.x * width + 6)
-    .attr("y", d => d.y * height + 4)
-    .text(d => d.id)
-    .attr("font-size", "10px");
-    </script>
+        svg.selectAll("text")
+        .attr("transform", "rotate(45)")
+        .data(nodes)
+        .enter()
+        .append("text")
+        .attr("x", d => d.x * width + 6)
+        .attr("y", d => d.y * height + 4)
+        .text(d => d.id)
+        .attr("font-size", "10px");
+        </script>
     </div>
 </body>
 </html>
