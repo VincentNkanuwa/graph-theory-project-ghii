@@ -116,13 +116,10 @@ for (let iter = 0; iter < ITERATIONS; iter++) {
 }
 
 // Output new positions
-// Save optimized coordinates to JSON
 console.log("Optimized Node Positions:");
 data.nodes.forEach(n => {
   console.log(`${n.id}: (${n.x.toFixed(4)}, ${n.y.toFixed(4)})`);
-//   fs.writeFileSync("optimized_nodes.json", JSON.stringify(data.nodes, null, 2));
 });
-
 // Save as HTML file
 const htmlContent = `
 <!DOCTYPE html>
@@ -168,7 +165,7 @@ const htmlContent = `
         .enter()
         .append("text")
         .attr("x", d => d.x * width + 10)
-        .attr("y", (d, i) => d.y * height + 0.1 + i * 1.3)
+        .attr("y", (d, i) => d.y * height + 1 + i * 2.9)
         .style("text-anchor", d => d.x < 0.5 ? "start" : "end")
         .text(d => d.id)
         .attr("font-size", "10px");
