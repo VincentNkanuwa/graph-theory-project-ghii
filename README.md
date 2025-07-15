@@ -1,7 +1,12 @@
 This is the graph theory assessment for GHII Software Interview Post
 --------------------------------------------------------------------
 
-To Run the the code
+To Run the the code 
+
+You  need to install Node js on your envirment. This system use version 22.17.0. 
+
+Installing the same version is more preferrable
+
 Download/clone the repository to the local machine. Either windows or linux
 
 Navigate to th repository directory
